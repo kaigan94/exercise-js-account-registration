@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  font-family: "Cinzel", serif;
+  margin: 0;
+}
+
+html {
+  --border-radius: 0.6rem;
+  --font-size: 1rem;
+  --main-color: #4e8d3d; /* Forest Green */
+  --accent-color: #d4af37; /* Gold (for Elvish elegance) */
+  --background-color: #3e4b3e; /* Deep Moss Green for background */
+  --button-hover: #e67e22; /* Glowing Amber for button hover */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    #3e4b3e,
+    #2f3b2f
+  ); /* Earthy dark gradient */
+  color: #ecf0f1;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--font-size);
+  font-family: "Cinzel", serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  color: #d4af37; /* Gold */
+  font-size: 2rem; /* Slightly smaller for better fit */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px #d4af37, 0 0 25px #d4af37; /* Gold glowing effect */
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--main-color);
+}
+
+form .input-container {
+  position: relative;
+}
+
+form .input-container label {
+  font-size: 1rem;
+  color: #7f8c8d;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+form .input-container input {
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+  padding: 1rem;
+  color: #2c3e50;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 5px var(--main-color);
+}
+
+form .input-container input:focus {
+  border-color: var(--main-color);
+  outline: none;
+  box-shadow: inset 0 0 8px var(--accent-color);
+}
+
+form .input-container.valid input {
+  border-color: var(--accent-color);
+}
+
+form .input-container.error input {
+  border-color: red;
+}
+
+form .input-container.focus label,
+form .input-container.valid label {
+  color: var(--main-color);
+}
+
+form .input-container.error label {
+  color: red;
+}
+
+button {
+  background: linear-gradient(
+    45deg,
+    var(--main-color),
+    var(--accent-color)
+  ); /* Forest Green to Gold gradient */
+  border: none;
+  border-radius: var(--border-radius);
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:hover {
+  background: linear-gradient(45deg, var(--accent-color), var(--main-color));
+  box-shadow: 0 0 30px var(--accent-color);
+  transform: scale(1.05);
+}
+
+.prefill {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.prefill-btn {
+  background: linear-gradient(
+    45deg,
+    #27ae60,
+    #2ecc71
+  ); /* Earthy Green gradient */
+  border-radius: var(--border-radius);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(39, 174, 96, 0.5);
+}
+
+.prefill-btn:hover {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  box-shadow: 0 0 30px rgba(39, 174, 96, 0.8);
+  transform: scale(1.05);
+}
+
+.feedback {
+  color: red;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  form {
+    margin-inline: auto;
+  }
+}
